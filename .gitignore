@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+logs/
+checkpoints/
+sft_export/
+generated/
+
+# annotation data lives on Hugging Face / is supplied on request; only code is committed
+annotations/public/
+annotations/private/
+
+# the LapChole bundle is sent directly to the organisers -- never committed
+orena-frame-lapchole-annotations_*.tar.gz
+orena-frame-lapchole-annotations_*.tar.gz.sha256

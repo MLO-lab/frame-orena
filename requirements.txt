@@ -1,0 +1,14 @@
+# Python 3.12. Install torch from the CUDA 12.8 index:
+#   pip install torch==2.11.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+transformers==5.9.0
+trl==1.8.0
+peft==0.19.1
+accelerate==1.14.0
+datasets==4.8.5
+safetensors==0.7.0
+numpy==2.4.6
+pillow==12.2.0
+wandb==0.27.0
+orena-focus==0.3.4
