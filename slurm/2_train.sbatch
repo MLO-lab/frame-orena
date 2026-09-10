@@ -26,6 +26,9 @@ mkdir -p logs checkpoints
 
 TRAIN="$EXPORT/train.jsonl"; MONITOR="$EXPORT/monitor.jsonl"
 [[ -f "$TRAIN" ]] || { echo "FATAL: $TRAIN missing -- run slurm/1_prepare_data.sbatch"; exit 1; }
+# loss-monitoring set: the first 400 rows of the (shuffled) training file, as in the
+# submitted run. These rows are also trained on, so eval_loss only tracks convergence.
+[[ -f "$MONITOR" ]] || head -n 400 "$TRAIN" > "$MONITOR"
 echo "training rows: $(wc -l < "$TRAIN")"
 
 echo "Node: $(hostname)"; nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
